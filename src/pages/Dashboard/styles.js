@@ -23,4 +23,8 @@ export const Body = styled.div`
   flex: 1;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
 `;

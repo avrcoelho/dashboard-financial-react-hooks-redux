@@ -23,6 +23,7 @@ export const Container = styled.div`
 export const Table = styled.table`
   border: solid 1px #eee;
   padding: 10px;
+  margin-bottom: 20px;
 
   thead tr th {
     width: 33.33%;
