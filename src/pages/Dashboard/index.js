@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import FinancialActions from '../../stores/ducks/financial';
 
-// import { Container, Body } from './styles';
+import { Container, Body } from './styles';
 
-// import Header from '~/components/Header';
+import Header from '../../components/Header';
+import Installments from '../../components/Installments';
+import Details from '../../components/Details';
 
 export default function Dashboard() {
-  const data = useSelector(state => state.financial.data);
   const error = useSelector(state => state.financial.error);
   const loading = useSelector(state => state.financial.loading);
 
@@ -22,13 +23,25 @@ export default function Dashboard() {
     loadFinancialData();
   }, [dispatch]);
 
-  console.log(data);
-
   return (
-    // <Container>
-    //   <Header />
-    //   <Body />
-    // </Container>
-    <h1>Hello</h1>
+    <Container>
+      {error ? (
+        <div className="error">Erro ao obter os dados</div>
+      ) : (
+        <>
+          {loading ? (
+            <i className="fa fa-spinner fa-pulse fa-3x" />
+          ) : (
+            <>
+              <Header />
+              <Body>
+                <Installments />
+                <Details />
+              </Body>
+            </>
+          )}
+        </>
+      )}
+    </Container>
   );
 }

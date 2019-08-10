@@ -12,7 +12,7 @@ export default Creators;
 
 export const INITIAL_STATE = Immutable({
   data: {},
-  loading: false,
+  loading: true,
   error: null,
 });
 
@@ -20,6 +20,7 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.FINANCIAL_DATA_REQUEST]: state => state.merge({ loading: true, error: null }),
   [Types.FINANCIAL_DATA_SUCCESS]: (state, { data }) => state.merge({
     data,
+    loading: false,
   }),
   [Types.FINANCIAL_DATA_FAILURE]: (state, { error }) => state.merge({ loading: false, error }),
 });
