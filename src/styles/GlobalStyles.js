@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
     outline: 0;
   }
   body {
-    background: #000;
+    background: #fff;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     font-family: Arial, Helvetica, sans-serif;

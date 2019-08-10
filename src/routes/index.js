@@ -2,14 +2,12 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // pages
-import Login from '~/pages/Login';
-import Orders from '~/pages/Orders';
+import Dashboard from '../pages/Dashboard';
 
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Login} />
-      <Route path="/orders" component={Orders} />
+      <Route exact path="/" component={Dashboard} />
     </Switch>
   </BrowserRouter>
 );

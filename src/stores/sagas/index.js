@@ -1,14 +1,9 @@
 import { all, takeLatest } from 'redux-saga/effects';
 
-import { LoginTypes } from '../ducks/login';
-import { OrdersTypes } from '../ducks/orders';
+import { FinancialTypes } from '../ducks/financial';
 
-import { login } from './login';
-import { orders } from './orders';
+import { financialRequest } from './financial';
 
 export default function* rootSaga() {
-  return yield all([
-    takeLatest(LoginTypes.SET_LOGIN_REQUEST, login),
-    takeLatest(OrdersTypes.SET_ORDERS_REQUEST, orders),
-  ]);
+  return yield all([takeLatest(FinancialTypes.FINANCIAL_DATA_REQUEST, financialRequest)]);
 }
